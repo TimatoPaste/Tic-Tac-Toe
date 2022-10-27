@@ -24,11 +24,6 @@ public class GameDriver{
 		play();
 	}
 	public static void main(String[] args){
-		// System.out.println("main is running");
-		Player p = new Player("elon.jpg");
-		System.out.println("p is "+p);
-		p.start();
-		new GameDriver(p).play();
-		// System.out.println("background started");
+		
 	}
 }
