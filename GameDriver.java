@@ -33,7 +33,4 @@ public class GameDriver{
 		//recur
 		play();
 	}
-	public static void main(String[] args){
-		
-	}
 }
