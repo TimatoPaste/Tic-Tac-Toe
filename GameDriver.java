@@ -5,12 +5,27 @@ public class GameDriver{
 	public GameDriver(GameState initial){
 		state = initial;
 	}
-	
-	public void play(){
-		// System.out.println("playing");
-		//part(b)
-		//base case
+	public void setUp(){
 		
+	}
+	/*
+	get players' names from command line
+	save into player variables
+	construct a gameState(player x, player o);
+	
+	make moves
+	
+	
+	
+	*/
+	public Player(String aName){
+		name=aName;
+	}
+	public void play(){
+		state = setUp();
+		playGame();
+	}
+	public void playGame(){
 		if(state.isGameover()){ //checks for winner or a draw
 			if(state.getWinner()!=null)
 				System.out.println(state.getWinner()+" wins!");
@@ -31,6 +46,6 @@ public class GameDriver{
 		}
 		state.makeMove(nextMove);
 		//recur
-		play();
+		playGame();
 	}
 }
