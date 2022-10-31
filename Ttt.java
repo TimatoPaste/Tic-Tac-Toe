@@ -74,7 +74,7 @@ public class Ttt implements GameState{
        return x;
     if(s.toUpperCase().equals("O")
        return o;
-    return " ";//a blank string
+    return null;//a blank string
   }
   private void togglePlayers(){
     if(current == x)
