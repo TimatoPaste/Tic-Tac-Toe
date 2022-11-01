@@ -1,18 +1,23 @@
+import java.util.scanner
 public class GameDriver{
 	
-	private GameState state;
-	private Easyreader Names;
-	private String Name1;
-	private String Name2;
 	
-	public GameDriver(GameState initial){
-		state = initial;
+	private GameState state;
+	private Scanner Names;
+	private Player NameX;
+	private Player NameO;
+	
+	public GameDriver(){
+		Names=new Scanner(System.in);
+		//state = initial;
 	}
 	public void setUp(){
 		System.out.print("Player 1: ");
-		Name1=Names.readWord();
-		System.out.print(/n"Player 2: ");
-		Name2=Names.readWord();
+		NameX=Names.nextLine();
+		System.out.println();
+		System.out.print("Player 2: ");
+		NameO=Names.readLine();
+		state=new GameState(NameX, NameO);
 	}
 	/*
 	get players' names from command line
