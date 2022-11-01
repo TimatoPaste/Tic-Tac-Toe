@@ -17,7 +17,7 @@ public class GameDriver{
 		System.out.println();
 		System.out.print("Player 2: ");
 		NameO=Names.readLine();
-		state=new GameState(NameX, NameO);
+		state=new Ttt(NameX, NameO);
 	}
 	/*
 	get players' names from command line
