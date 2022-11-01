@@ -50,6 +50,10 @@ public class GameDriver{
 		}
 		state.makeMove(nextMove);
 		//recur
+
 		playGame();
+	}
+	public static void main(String[] args){
+		new GameDriver().play();
 	}
 }
