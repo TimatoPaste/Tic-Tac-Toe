@@ -105,9 +105,9 @@ public class Ttt implements GameState{
   
   //helper methods
   private Player fromString(String s){
-    if(s.toUpperCase().equals("X")
+    if(s.toUpperCase().equals("X"))
        return x;
-    if(s.toUpperCase().equals("O")
+    if(s.toUpperCase().equals("O"))
        return o;
     return null;//a blank string
   }
@@ -119,6 +119,6 @@ public class Ttt implements GameState{
     else System.out.println("error with player names");
   }
   private Player fromString(int a, int b){
-    return fromString(state[a, b]);
+    return fromString(state[a][b]);
   }
 }
