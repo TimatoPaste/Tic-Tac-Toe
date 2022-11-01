@@ -7,38 +7,25 @@ public class Ttt implements GameState{
     this.o = o;
     current = x;
   }
-  public static Ttt setUp(){
-		System.out.print("Player 1: ");
-		Player X = new Player(Names.nextLine());
-		System.out.println();
-		System.out.print("Player 2: ");
-		Player O = new Player(Names.readLine());
-		return new Ttt(NameX, NameO);
-	}
-  
    private String[][] state = {
     {" ", " ", " "}, 
     {" ", " ", " "},
     {" ", " ", " "}
   };
   
-  private int[] latestMove;
+
+  
   public boolean isGameOver(){
     if(getWinner() == null){
-      return false;
-    }
-    //checks for draws
-    for(String a:state){
-      if(a.equals(" ")){
-        return false;
+      for(String[] a: state){
+        for(String b: state){
+          if(b.equals("")){
+            return false;
+          }
+        }
       }
     }
     return true;
-    
-  
-  public boolean isGameOver(){
-
-
   }
   
   public Player getWinner(){
@@ -62,7 +49,6 @@ public class Ttt implements GameState{
       if(potentialWinner == fromString(0, 1)&& potentialWinner == fromString(2, 1))
         return potentialWinner;//horizontal
     }
-    
     potentialWinner = fromString(2, 2);
     if(potentialWinner != null){
       if(potentialWinner == fromString(2, 0) && potentialWinner == fromString(2, 1))
@@ -93,6 +79,7 @@ public class Ttt implements GameState{
     return moveI;
   }
   
+  private int[] latestMove;
   public void makeMove(String move){
     latestMove = stringMoveToIntMove(move);
     if(state[latestMove[0],latestMove[1]].equals(" ")){
@@ -108,9 +95,16 @@ public class Ttt implements GameState{
     }
   }
   
-  String toString(){}
-  
-  
+  String toString(){
+    outputS = "";
+    for(String[] r:state){
+      for(String c:r){
+        outputS += c+" ";
+      }
+      outputS += "\n";
+    }
+    return outputS;
+  }
   
   //helper methods
   private Player fromString(String s){
