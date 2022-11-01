@@ -3,22 +3,13 @@ public class GameDriver{
 	
 	
 	private GameState state;
-	private Scanner Names;
-	private Player NameX;
-	private Player NameO;
+
 	
 	public GameDriver(){
 		Names=new Scanner(System.in);
 		//state = initial;
 	}
-	public void setUp(){
-		System.out.print("Player 1: ");
-		NameX=Names.nextLine();
-		System.out.println();
-		System.out.print("Player 2: ");
-		NameO=Names.readLine();
-		state=new Ttt(NameX, NameO);
-	}
+	
 	/*
 	get players' names from command line
 	save into player variables
