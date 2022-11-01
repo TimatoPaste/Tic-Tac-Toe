@@ -14,7 +14,7 @@ public class Ttt implements GameState{
   };
   
   private int[] latestMove;
-  boolean isGameOver(){
+  public boolean isGameOver(){
     if(getWinner() == null){
       return false;
     }
@@ -27,12 +27,12 @@ public class Ttt implements GameState{
     return true;
     
   
-  boolean isGameOver(){
+  public boolean isGameOver(){
 
 
   }
   
-  Player getWinner(){
+  public Player getWinner(){
     //it is impossible to win without either having [0, 0], [1, 1], or [2, 2]
     //three ways to win: diagonal, vertical, horizontal
     Player potentialWinner = fromString(0, 0);
@@ -65,11 +65,11 @@ public class Ttt implements GameState{
   }
   
   
-  Player getCurrentPlayer(){
+  public Player getCurrentPlayer(){
     return current;
   }
   
-  ArrayList<String> getCurrentMoves(){
+  public ArrayList<String> getCurrentMoves(){
     ArrayList<String> result = new ArrayList<String>();
     for(int i = 0; i<state.length; i++)
       for(int j = 0; j<state.length; j++)
@@ -78,13 +78,13 @@ public class Ttt implements GameState{
     return result;
   }
   
-  int[] stringMoveToIntMove(String move){
+  public int[] stringMoveToIntMove(String move){
     String[] moveS = move.split(" ");
     int[] moveI = {Integer.parseInt(moveS[0]),Integer.parseInt(moveS[1])};
     return moveI;
   }
   
-  void makeMove(String move){
+  public void makeMove(String move){
     latestMove = stringMoveToIntMove(move);
     if(state[latestMove[0],latestMove[1]].equals(" ")){
       if(getCurrentPlayer() == x){
