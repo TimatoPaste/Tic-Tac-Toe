@@ -17,7 +17,6 @@ public class GameDriver{
 	make moves
 	*/
 	public void play(){
-		setUp();
 		playGame();
 	}
 	public void playGame(){
@@ -45,6 +44,6 @@ public class GameDriver{
 		playGame();
 	}
 	public static void main(String[] args){
-		new GameDriver().play();
+		new GameDriver(Ttt.setup()).play();
 	}
 }
