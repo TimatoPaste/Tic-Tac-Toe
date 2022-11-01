@@ -24,6 +24,6 @@ public class GameDriver{
 		play();
 	}
 	public static void main(String[] args){
-		
+		new GameDriver().play();
 	}
 }
