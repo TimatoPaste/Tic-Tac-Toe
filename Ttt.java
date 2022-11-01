@@ -7,6 +7,15 @@ public class Ttt implements GameState{
     this.o = o;
     current = x;
   }
+  public static Ttt setUp(){
+		System.out.print("Player 1: ");
+		Player X = new Player(Names.nextLine());
+		System.out.println();
+		System.out.print("Player 2: ");
+		Player O = new Player(Names.readLine());
+		return new Ttt(NameX, NameO);
+	}
+  
    private String[][] state = {
     {" ", " ", " "}, 
     {" ", " ", " "},
