@@ -1,28 +1,27 @@
 public class GameDriver{
 	
 	private GameState state;
+	private Easyreader Names;
+	private String Name1;
+	private String Name2;
 	
 	public GameDriver(GameState initial){
 		state = initial;
 	}
 	public void setUp(){
-		
+		System.out.print("Player 1: ");
+		Name1=Names.readWord();
+		System.out.print(/n"Player 2: ");
+		Name2=Names.readWord();
 	}
 	/*
 	get players' names from command line
 	save into player variables
 	construct a gameState(player x, player o);
-	
 	make moves
-	
-	
-	
 	*/
-	public Player(String aName){
-		name=aName;
-	}
 	public void play(){
-		state = setUp();
+		setUp();
 		playGame();
 	}
 	public void playGame(){
