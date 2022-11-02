@@ -19,7 +19,7 @@ public class Ttt implements GameState{
     if(getWinner() == null){
       for(String[] a: state){
         for(String b: state){
-          if(b.equals("")){
+          if(b.equals(" ")){
             return false;
           }
         }
