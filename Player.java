@@ -10,5 +10,7 @@ public class Player{
   * @return a string representing the move chosen;
   * "no move" if no valid moves for the current player. */
   public String getNextMove (Gamestate state)
-  { /* implementation not shown */ }
+  { /* implementation not shown */ 
+    return state.getCurrentMoves(0);
+  }
 }
