@@ -15,7 +15,7 @@ public class Ttt implements GameState{
   
 
   
-  public boolean isGameOver(){
+  public boolean isGameover(){
    return getWinner() != null && getCurrentMoves().size()!=0;
   }
   
