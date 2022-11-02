@@ -70,8 +70,8 @@ public class Ttt implements GameState{
     return moveI;
   }
   
-  private int[] latestMove;
   public void makeMove(String move){
+    int[] latestMove;
     latestMove = stringMoveToIntMove(move);
     if(state[latestMove[0],latestMove[1]].equals(" ")){
       if(getCurrentPlayer() == x){
