@@ -1,3 +1,4 @@
+import java.io.BufferedReader.*;
 public class Ttt implements GameState{
   private Player x;
   private Player o;
@@ -7,6 +8,17 @@ public class Ttt implements GameState{
     this.o = o;
     current = x;
   }
+  
+  public Ttt setup(){
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Player One, enter your name: ");
+    Player x = new Player(reader.readLine());
+    System.out.println("Player Two, enter your name: ");
+    Player o = new Player(reader.readLine());
+    
+    Ttt game = new Ttt(x,o);
+  }
+  
    private String[][] state = {
     {" ", " ", " "}, 
     {" ", " ", " "},
