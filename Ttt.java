@@ -16,7 +16,8 @@ public class Ttt implements GameState{
     System.out.println("Player Two, enter your name: ");
     Player o = new Player(reader.readLine());
     
-    Ttt game = new Ttt(x,o);
+    return new Ttt(x,o);
+	
   }
   
    private String[][] state = {
