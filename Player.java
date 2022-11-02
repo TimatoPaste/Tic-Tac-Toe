@@ -9,6 +9,6 @@ public class Player{
   * @param state the cunent state ofthe game; its curent player is this player.
   * @return a string representing the move chosen;
   * "no move" if no valid moves for the current player. */
-  publie String getNextMove (Gamestate state)
+  public String getNextMove (Gamestate state)
   { /* implementation not shown */ }
 }
