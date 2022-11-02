@@ -16,16 +16,7 @@ public class Ttt implements GameState{
 
   
   public boolean isGameOver(){
-    if(getWinner() == null){
-      for(String[] a: state){
-        for(String b: state){
-          if(b.equals(" ")){
-            return false;
-          }
-        }
-      }
-    }
-    return true;
+   return getWinner() != null && getCurrentMoves().size()!=0;
   }
   
   public Player getWinner(){
