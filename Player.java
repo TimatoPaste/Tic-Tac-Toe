@@ -11,16 +11,16 @@ public class Player{
   * @return a string representing the move chosen;
   * "no move" if no valid moves for the current player. */
 
-  public String getNextMove (Gamestate state)
+  public String getNextMove (GameState state)
   { 
-      Scanner er = new Scanner();
+      Scanner er = new Scanner(System.in);
       System.out.println(state.toString());
-      String move = er.next();
+      String move = er.nextLine().strip();
     
       // later put in error checking to see if the player made an invalid move
       // either incorrect format or an impossible move
       
-       if(!state.getValidMoves().contains(move)){
+       if(!state.getCurrentMoves().contains(move)){
         System.out.println("invalid move, try again");
         return getNextMove(state);
       }  

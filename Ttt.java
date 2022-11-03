@@ -96,7 +96,7 @@ public class Ttt implements GameState{
 
     int[] latestMove = stringMoveToIntMove(move);
 
-    if(state[latestMove[0],latestMove[1]].equals(" ")){
+    if(state[latestMove[0]][latestMove[1]].equals(" ")){
 
       if(getCurrentPlayer() == x){
         state[latestMove[0]][latestMove[1]] = "x";
