@@ -42,19 +42,6 @@ public class GameDriver{
 		playGame();
 	}
 	public static void main(String[] args){
-		//new GameDriver(Ttt.setup()).play();
-		Ttt test = new Ttt(new Player("X"), new Player("O"));
-		test.makeMove("0 0");
-		System.out.println(test);
-		test.makeMove("1 1");
-		System.out.println(test);
-		test.makeMove("1 0");
-		System.out.println(test);
-		test.makeMove("2 0");
-		System.out.println(test);
-		test.makeMove("1 0");
-		System.out.println(test);
-		test.makeMove("0 0");
-		System.out.println(test);
+		new GameDriver(Ttt.setup()).play();
 	}
 }
