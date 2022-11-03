@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 public class Ttt implements GameState{
   private Player x;
   private Player o;
@@ -8,7 +9,19 @@ public class Ttt implements GameState{
     this.o = o;
     current = x;
   }
-  public static Ttt setup(){return null;}
+
+  
+  public static Ttt setup(){
+    Scanner reader = new Scanner(System.in);
+    System.out.println("Player One, enter your name: ");
+    Player x = new Player(reader.nextLine());
+    System.out.println("Player Two, enter your name: ");
+    Player o = new Player(reader.nextLine());
+    
+    return new Ttt(x,o);
+	
+  }
+  
    private String[][] state = {
     {" ", " ", " "}, 
     {" ", " ", " "},
@@ -80,8 +93,11 @@ public class Ttt implements GameState{
   }
   
   public void makeMove(String move){
+
     int[] latestMove = stringMoveToIntMove(move);
-    if(state[latestMove[0]][latestMove[1]].equals(" ")){
+
+    if(state[latestMove[0],latestMove[1]].equals(" ")){
+
       if(getCurrentPlayer() == x){
         state[latestMove[0]][latestMove[1]] = "x";
       }
