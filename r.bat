@@ -1,3 +1,3 @@
-java -cp .; starter
+java GameDriver.java
 pause
 
