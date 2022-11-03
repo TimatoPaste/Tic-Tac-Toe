@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Ttt implements GameState{
   private Player x;
@@ -8,8 +9,9 @@ public class Ttt implements GameState{
     this.o = o;
     current = x;
   }
+
   
-  public Ttt setup(){
+  public static Ttt setup(){
     Scanner reader = new Scanner(System.in);
     System.out.println("Player One, enter your name: ");
     Player x = new Player(reader.nextLine());
@@ -25,6 +27,13 @@ public class Ttt implements GameState{
     {" ", " ", " "},
     {" ", " ", " "}
   };
+  
+  
+  
+  
+  
+  //TESTING THE CHANGE PUSH
+  
   
 
   
@@ -84,23 +93,26 @@ public class Ttt implements GameState{
   }
   
   public void makeMove(String move){
-    int[] latestMove;
-    latestMove = stringMoveToIntMove(move);
+
+    int[] latestMove = stringMoveToIntMove(move);
+
     if(state[latestMove[0],latestMove[1]].equals(" ")){
+
       if(getCurrentPlayer() == x){
-        state[latestMove[0],latestMove[1]] = "x";
+        state[latestMove[0]][latestMove[1]] = "x";
       }
       if(getCurrentPlayer() == o){
-        state[latestMove[0],latestMove[1]] = "o";
+        state[latestMove[0]][latestMove[1]] = "o";
       }
+      togglePlayers();
     }
     else{
       System.out.println("NOOOOOOOOOOOOOOOOOOO");//test
     }
   }
   
-  String toString(){
-    outputS = "";
+  public String toString(){
+    String outputS = "";
     for(String[] r:state){
       for(String c:r){
         outputS += c+" ";

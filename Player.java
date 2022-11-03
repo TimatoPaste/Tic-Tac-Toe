@@ -1,5 +1,5 @@
 public class Player{
-  private String name; / / name of this player
+  private String name; // name of this player
   public Player (String aName)
   { name = aName; }
   public String getName()
@@ -9,6 +9,7 @@ public class Player{
   * @param state the cunent state ofthe game; its curent player is this player.
   * @return a string representing the move chosen;
   * "no move" if no valid moves for the current player. */
+
   public String getNextMove (Gamestate state)
   { 
       EasyReader er = new EasyReader();

@@ -1,13 +1,11 @@
-import java.util.scanner
+import java.util.Scanner;
 public class GameDriver{
 	
 	
 	private GameState state;
-
 	
-	public GameDriver(){
-		Names=new Scanner(System.in);
-		//state = initial;
+	public GameDriver(GameState initial){
+		state = initial;
 	}
 	
 	/*

@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 public interface GameState{
-	boolean isGameover();
-	Player getWinner();
-	Player getCurrentPlayer();
-	ArrayList<String> getCurrentMoves();
-	void makeMove(String move);
-	String toString();
+	public boolean isGameover();
+	public Player getWinner();
+	public Player getCurrentPlayer();
+	public ArrayList<String> getCurrentMoves();
+	public void makeMove(String move);
+	public String toString();
 }
