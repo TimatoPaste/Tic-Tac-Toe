@@ -1,4 +1,4 @@
-import java.io.BufferedReader.*;
+import java.util.Scanner;
 public class Ttt implements GameState{
   private Player x;
   private Player o;
@@ -10,11 +10,11 @@ public class Ttt implements GameState{
   }
   
   public Ttt setup(){
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    Scanner reader = new Scanner(System.in);
     System.out.println("Player One, enter your name: ");
-    Player x = new Player(reader.readLine());
+    Player x = new Player(reader.nextLine());
     System.out.println("Player Two, enter your name: ");
-    Player o = new Player(reader.readLine());
+    Player o = new Player(reader.nextLine());
     
     return new Ttt(x,o);
 	
