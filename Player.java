@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Player{
   private String name; // name of this player
   public Player (String aName)
@@ -12,17 +13,17 @@ public class Player{
 
   public String getNextMove (Gamestate state)
   { 
-      EasyReader er = new EasyReader();
+      Scanner er = new Scanner();
       System.out.println(state.toString());
-      String move = er.readLine();
+      String move = er.next();
     
       // later put in error checking to see if the player made an invalid move
       // either incorrect format or an impossible move
       
-//        if(!state.getValidMoves().contains(move)){
-//         System.out.println("invalid move, try again");
-//         return getNextMove(state);
-//       }  
+       if(!state.getValidMoves().contains(move)){
+        System.out.println("invalid move, try again");
+        return getNextMove(state);
+      }  
     
       if(!move.equals(""))
       {
