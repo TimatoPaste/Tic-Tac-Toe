@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Ttt implements GameState{
   private Player x;
   private Player o;
@@ -7,6 +8,7 @@ public class Ttt implements GameState{
     this.o = o;
     current = x;
   }
+  public static Ttt setup(){return null;}
    private String[][] state = {
     {" ", " ", " "}, 
     {" ", " ", " "},
@@ -22,7 +24,7 @@ public class Ttt implements GameState{
   
 
   
-  public boolean isGameOver(){
+  public boolean isGameover(){
    return getWinner() != null && getCurrentMoves().size()!=0;
   }
   
@@ -77,24 +79,24 @@ public class Ttt implements GameState{
     return moveI;
   }
   
-  private int[] latestMove;
   public void makeMove(String move){
-    latestMove = stringMoveToIntMove(move);
-    if(state[latestMove[0],latestMove[1]].equals(" ")){
+    int[] latestMove = stringMoveToIntMove(move);
+    if(state[latestMove[0]][latestMove[1]].equals(" ")){
       if(getCurrentPlayer() == x){
-        state[latestMove[0],latestMove[1]] = "x";
+        state[latestMove[0]][latestMove[1]] = "x";
       }
       if(getCurrentPlayer() == o){
-        state[latestMove[0],latestMove[1]] = "o";
+        state[latestMove[0]][latestMove[1]] = "o";
       }
+      togglePlayers();
     }
     else{
       System.out.println("NOOOOOOOOOOOOOOOOOOO");//test
     }
   }
   
-  String toString(){
-    outputS = "";
+  public String toString(){
+    String outputS = "";
     for(String[] r:state){
       for(String c:r){
         outputS += c+" ";
