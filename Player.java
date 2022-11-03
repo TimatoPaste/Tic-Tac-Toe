@@ -17,11 +17,19 @@ public class Player{
     
       // later put in error checking to see if the player made an invalid move
       // either incorrect format or an impossible move
+      
+//        if(!state.getValidMoves().contains(move)){
+//         System.out.println("invalid move, try again");
+//         return getNextMove(state);
+//       }  
     
       if(!move.equals(""))
       {
           return move;
       }
+    
+     
+    
       return "no move";
  
    }
