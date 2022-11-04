@@ -15,7 +15,8 @@ public class Player{
   { 
       Scanner er = new Scanner(System.in);
       System.out.println(state.toString());
-      String move = er.nextLine().strip();
+      String move = er.nextLine();
+	  move = move.trim();
     
       // later put in error checking to see if the player made an invalid move
       // either incorrect format or an impossible move

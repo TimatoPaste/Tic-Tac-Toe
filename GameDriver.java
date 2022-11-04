@@ -25,9 +25,9 @@ public class GameDriver{
 				System.out.println("Game ends in a draw");
 			return;
 		}
-		
+		System.out.println(state.toString());
 		Player current = state.getCurrentPlayer();
-		System.out.println("current player is "+current);
+		System.out.println("current player is "+current.getName());
 		String nextMove = current.getNextMove(state);
 		
 		if(nextMove.equals("no move")){
@@ -42,6 +42,6 @@ public class GameDriver{
 		playGame();
 	}
 	public static void main(String[] args){
-		new GameDriver(Ttt.setup()).play());
+		new GameDriver(Ttt.setup()).play();
 	}
 }
