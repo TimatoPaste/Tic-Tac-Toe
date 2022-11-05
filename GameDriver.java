@@ -20,21 +20,21 @@ public class GameDriver{
 	public void playGame(){
 		if(state.isGameover()){ //checks for winner or a draw
 			if(state.getWinner()!=null)
-				System.out.println(state.getWinner()+" wins!");
+				System.out.println(state.getWinner().getName()+" wins!");
 			else 
 				System.out.println("Game ends in a draw");
 			return;
 		}
 		System.out.println(state.toString());
 		Player current = state.getCurrentPlayer();
-		System.out.println("current player is "+current.getName());
+		System.out.println("current player is "+current.getName()+" ("+current.marker+")");
 		String nextMove = current.getNextMove(state);
 		
 		if(nextMove.equals("no move")){
 			System.out.println("Player "+current+" has no move");
 		}
 		else{
-			System.out.println("Player "+current +" makes move "+nextMove);
+			System.out.println(current.getName() +" makes move "+nextMove);
 		}
 		state.makeMove(nextMove);
 		//recur
