@@ -30,7 +30,7 @@ public class Ttt implements GameState{
   };
   
   public boolean isGameover(){
-   return getWinner() != null && getCurrentMoves().size()!=0;
+   return getWinner() != null || getCurrentMoves().size()==0;
   }
   
   public Player getWinner(){
