@@ -14,22 +14,23 @@ public class Ttt implements GameState{
   public static Ttt setup(){
     Scanner reader = new Scanner(System.in);
     System.out.println("Player One, enter your name: ");
-    Player x = new Player(reader.nextLine());
-    System.out.println("Player Two, enter your name: ");
-    Player o = new Player(reader.nextLine());
+    Player x = new Player(reader.nextLine().trim(),"x");
+    System.out.println("\nPlayer Two, enter your name: ");
+    Player o = new Player(reader.nextLine().trim(),"o");
+	System.out.print("\n");
     
     return new Ttt(x,o);
 	
   }
   
    private String[][] state = {
-    {" ", " ", " "}, 
-    {" ", " ", " "},
-    {" ", " ", " "}
+    {"-", "-", "-"}, 
+    {"-", "-", "-"},
+    {"-", "-", "-"}
   };
   
   public boolean isGameover(){
-   return getWinner() != null && getCurrentMoves().size()!=0;
+   return getWinner() != null || getCurrentMoves().size()==0;
   }
   
   public Player getWinner(){
@@ -72,7 +73,7 @@ public class Ttt implements GameState{
     ArrayList<String> result = new ArrayList<String>();
     for(int i = 0; i<state.length; i++)
       for(int j = 0; j<state.length; j++)
-        if(state[i][j].equals(" "))
+        if(state[i][j].equals("-"))
           result.add(i+" "+j);
     return result;
   }
@@ -87,7 +88,7 @@ public class Ttt implements GameState{
 
     int[] latestMove = stringMoveToIntMove(move);
 
-    if(state[latestMove[0]][latestMove[1]].equals(" ")){
+    if(state[latestMove[0]][latestMove[1]].equals("-")){
 
       if(getCurrentPlayer() == x){
         state[latestMove[0]][latestMove[1]] = "x";

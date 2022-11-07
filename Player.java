@@ -1,8 +1,12 @@
 import java.util.Scanner;
 public class Player{
   private String name; // name of this player
-  public Player (String aName)
-  { name = aName; }
+  public String marker;
+  
+  public Player (String aName, String markerIn)
+  { name = aName; 
+   this.marker = markerIn;}
+ 
   public String getName()
   { return name; }
   /** This implementation chooses the first valid move.
@@ -14,14 +18,12 @@ public class Player{
   public String getNextMove (GameState state)
   { 
       Scanner er = new Scanner(System.in);
-      System.out.println(state.toString());
-      String move = er.nextLine().strip();
+      String move = er.nextLine().trim();
     
       // later put in error checking to see if the player made an invalid move
       // either incorrect format or an impossible move
-      
        if(!state.getCurrentMoves().contains(move)){
-        System.out.println("invalid move, try again");
+        System.out.println("\nInvalid move, try again\nPlease enter your move in the format \"row column\"");
         return getNextMove(state);
       }  
     
