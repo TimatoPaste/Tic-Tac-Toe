@@ -23,7 +23,7 @@ public class Player{
       // later put in error checking to see if the player made an invalid move
       // either incorrect format or an impossible move
        if(!state.getCurrentMoves().contains(move)){
-        System.out.println("invalid move, try again");
+        System.out.println("\nInvalid move, try again\nPlease enter your move in the format \"row column\"");
         return getNextMove(state);
       }  
     

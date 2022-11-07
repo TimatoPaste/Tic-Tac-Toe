@@ -19,6 +19,7 @@ public class GameDriver{
 	}
 	public void playGame(){
 		if(state.isGameover()){ //checks for winner or a draw
+			System.out.println(state.toString());
 			if(state.getWinner()!=null)
 				System.out.println(state.getWinner().getName()+" wins!");
 			else 
@@ -34,7 +35,7 @@ public class GameDriver{
 			System.out.println("Player "+current+" has no move");
 		}
 		else{
-			System.out.println(current.getName() +" makes move "+nextMove);
+			System.out.println("\n"+current.getName() +" makes move "+nextMove+"\n");
 		}
 		state.makeMove(nextMove);
 		//recur
