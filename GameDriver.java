@@ -52,6 +52,6 @@ public class GameDriver{
 			System.out.print("\n");
 			main(args);
 		}
-		else System.out.println("\nGOODBYE");
+		else System.out.println("\nSO LONG");
 	}
 }
