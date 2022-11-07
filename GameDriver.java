@@ -14,6 +14,7 @@ public class GameDriver{
 	construct a gameState(player x, player o);
 	make moves
 	*/
+
 	public void play(){
 		playGame();
 	}
@@ -28,7 +29,7 @@ public class GameDriver{
 		}
 		System.out.println(state.toString());
 		Player current = state.getCurrentPlayer();
-		System.out.println("current player is "+current.getName()+" ("+current.marker+")");
+		System.out.println("current player is "+current.getName());
 		String nextMove = current.getNextMove(state);
 		
 		if(nextMove.equals("no move")){

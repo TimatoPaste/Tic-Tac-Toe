@@ -1,22 +1,21 @@
 import java.util.Scanner;
 public class Player{
   private String name; // name of this player
-  public String marker;
   
-  public Player (String aName, String markerIn)
-  { name = aName; 
-   this.marker = markerIn;}
+  public Player (String aName){ 
+	name = aName;
+  }
  
-  public String getName()
-  { return name; }
+  public String getName(){ 
+	return name; 
+  }
   /** This implementation chooses the first valid move.
   * Ovenide this method in subclasses to define players with other strategies.
   * @param state the cunent state ofthe game; its curent player is this player.
   * @return a string representing the move chosen;
   * "no move" if no valid moves for the current player. */
 
-  public String getNextMove (GameState state)
-  { 
+  public String getNextMove (GameState state){ 
       Scanner er = new Scanner(System.in);
       String move = er.nextLine().trim();
     
@@ -27,8 +26,7 @@ public class Player{
         return getNextMove(state);
       }  
     
-      if(!move.equals(""))
-      {
+      if(!move.equals("")){
           return move;
       }
     

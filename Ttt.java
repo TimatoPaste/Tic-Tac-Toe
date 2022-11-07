@@ -14,9 +14,9 @@ public class Ttt implements GameState{
   public static Ttt setup(){
     Scanner reader = new Scanner(System.in);
     System.out.println("Player One, enter your name: ");
-    Player x = new Player(reader.nextLine().trim(),"x");
+    Player x = new Player(reader.nextLine().trim()+ " (x)");
     System.out.println("\nPlayer Two, enter your name: ");
-    Player o = new Player(reader.nextLine().trim(),"o");
+    Player o = new Player(reader.nextLine().trim()+" (o)");
 	System.out.print("\n");
     
     return new Ttt(x,o);
