@@ -45,5 +45,13 @@ public class GameDriver{
 	}
 	public static void main(String[] args){
 		new GameDriver(Ttt.setup()).play();
+		System.out.println("\nplay again? y/n");
+		//used to be the most beautiful line of code but tim killed it
+		//if(new Scanner(System.in).nextLine().trim().toUpperCase().contains("Y")) main(args);
+		if(new Scanner(System.in).nextLine().trim().toUpperCase().contains("Y")){
+			System.out.print("\n");
+			main(args);
+		}
+		else System.out.println("\nGOODBYE");
 	}
 }
