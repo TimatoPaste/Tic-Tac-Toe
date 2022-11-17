@@ -42,6 +42,6 @@ public class GameDriver{
 		playGame();
 	}
 	public static void main(String[] args){
-		new GameDriver(Ttt.setup()).play());
+		new GameDriver(Ttt.setup()).play();
 	}
 }
