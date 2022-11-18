@@ -45,7 +45,6 @@ public class Ttt implements GameState{
       if(potentialWinner == fromString(1, 0)&& potentialWinner == fromString(2, 0))
         return potentialWinner;//horizontal
     }
-	  
     potentialWinner = fromString(1, 1);
     if(potentialWinner != null){
       if(potentialWinner == fromString(2, 0) && potentialWinner ==fromString(0, 2))
@@ -59,7 +58,7 @@ public class Ttt implements GameState{
     if(potentialWinner != null){
       if(potentialWinner == fromString(2, 0) && potentialWinner == fromString(2, 1))
         return potentialWinner;//vertical
-      if(potentialWinner == fromString(0, 2)&& potentialWinner == fromString(0, 1))
+      if(potentialWinner == fromString(0, 2)&& potentialWinner == fromString(1, 2))
         return potentialWinner;//horizontal
     }
     return null;
